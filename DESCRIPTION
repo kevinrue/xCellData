@@ -1,0 +1,27 @@
+Package: xCellData
+Title: xCell Signatures
+Version: 0.0.1
+Date: 2019-02-21
+Authors@R: c(
+    person("Kevin", "Rue-Albrecht",
+        email = "kevin.rue-albrecht@kennedy.ox.ac.uk",
+        role = c("aut", "cre"),
+        comment = c(ORCID = "0000-0003-3899-3872"))
+    )
+Description: Various cell type signatures.
+Depends: 
+    R (>= 3.6.0)
+Imports:
+    unisets
+Suggests: 
+    BiocStyle,
+    knitr,
+    rmarkdown,
+    testthat,
+    covr
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 6.1.1
+VignetteBuilder: knitr

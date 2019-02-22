@@ -1,0 +1,95 @@
+---
+title: "Obtaining 489 cell type gene signatures from Aran et al., 2017"
+author:
+- name: Kevin Rue-Albrecht
+  affiliation: 
+  - &id4 Kennedy Institute of Rheumatology, University of Oxford,
+    Headington, Oxford OX3 7FY, UK.
+  email: kevin.rue-albrecht@kennedy.ox.ac.uk
+date: "`r BiocStyle::doc_date()`"
+package: "`r BiocStyle::pkg_ver('xCellData')`"
+bibliography: bibliography.bib
+output: 
+  BiocStyle::html_document:
+    toc_float: true
+abstract: |
+  Instructions on how to obtain 489 cell type gene signatures from Aran et al., 2017.
+vignette: |
+  %\VignetteIndexEntry{Obtaining 489 cell type gene signatures from Aran et al., 2017}
+  %\VignetteEngine{knitr::rmarkdown}
+---
+
+```{r, echo=FALSE, results="hide", message=FALSE}
+require(knitr)
+opts_chunk$set(error=FALSE, message=FALSE, warning=FALSE)
+```
+
+```{r style, echo=FALSE, results='asis'}
+BiocStyle::markdown()
+```
+
+# Introduction 
+
+The `r Githubpkg("kevinrue/xCellData")` package provides a _R_ /
+_Bioconductor_ resource for obtaining and representing 489 cell type gene signatures from [@Aran2017].
+
+This packages uses the `r Githubpkg("kevinrue/unisets")` `BaseSets` class to represent the collection of signatures.
+However, the data itself is distributed with the package as a GMT file, which may be parsed and imported by other packages (e.g. `r Biocpkg("GSEABase")` `GeneSetCollection`, `r Githubpkg("Kayla-Morrell/GeneSet")` `tbl_geneset`).
+
+# Data preprocessing
+
+The script used to download and preprocess the data is distributed with the package.
+You can find it at the following location:
+
+```{r}
+system.file(package = "xCellData", "scripts", "makeData.R")
+```
+
+Briefly, the script downloads "Additional file 3: The 489 cell type gene signatures. (XLSX 417 kb)" from the [https://genomebiology.biomedcentral.com][genomebiology_aran_add3] website and reformats the content of the published Microsoft Excel file into a GMT text file.
+
+# Workflow
+
+## Loading the data
+
+We use the `xCellData()` function to parse the GMT file distributed with the package into a `r Githubpkg("kevinrue/unisets")` `BaseSets` object.
+
+```{r}
+library(xCellData)
+library(unisets)
+xsig <- xCellData()
+xsig
+```
+
+## Using the data
+
+The signatures may then be used for downstream analyses such as cell type annotation.
+
+For instance, the `BaseSets` object can be split into a list of signatures, for use in functions such as `lapply`.
+
+```{r}
+as.list(xsig)
+```
+
+One may also inspect the number of genes in each signature.
+
+```{r}
+dat <- setLengths(xsig)
+hist(
+    dat, breaks = 100, xlim=c(0, max(dat)),
+    main = "Distribution of signature sizes", xlab = "Number of genes"
+)
+```
+
+Example of packages using `r Githubpkg("kevinrue/xCellData")` include:
+
+- `r Githubpkg("kevinrue/hancock")`
+
+# Session information
+
+```{r}
+sessionInfo()
+```
+
+[genomebiology_aran_add3]: https://genomebiology.biomedcentral.com/articles/10.1186/s13059-017-1349-1#MOESM3
+
+# References
