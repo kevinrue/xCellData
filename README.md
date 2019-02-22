@@ -3,8 +3,18 @@
 
 # xCellData
 
-The goal of xCellData is to provide a _R_ /
+The goal of _xCellData_ is to provide a _R_ /
 _Bioconductor_ resource for obtaining and representing 489 cell type gene signatures from [Aran et al., 2017][genomebiology_aran_add3].
+
+# Prerequisites
+
+The [_xCellData_](https://github.com/kevinrue/xCellData) package uses the `BaseSets` class defined in the [_unisets_](https://github.com/kevinrue/unisets) package.
+This dependency may be installed as follows:
+
+``` r
+install.packages("devtools")
+devtools::install_github("kevinrue/unisets", build_opts = c("--no-resave-data", "--no-manual"))
+```
 
 ## Installation
 
