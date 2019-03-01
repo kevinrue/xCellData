@@ -12,5 +12,5 @@
 #' xCellData()
 xCellData <- function() {
     gmtFile <- system.file(package = "xCellData", 'extdata', "xCell.gmt")
-    import.gmt(gmtFile)
+    unisets::import.gmt(gmtFile)
 }
