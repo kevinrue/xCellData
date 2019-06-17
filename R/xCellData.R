@@ -3,7 +3,7 @@
 #' @name xCellData
 #' @rdname xCellData
 #'
-#' @return The gene sets as a [`unisets-package`] [`BaseSets`].
+#' @return The gene sets as a [`unisets-package`] [`Sets`].
 #'
 #' @export
 #' @importFrom unisets import.gmt
