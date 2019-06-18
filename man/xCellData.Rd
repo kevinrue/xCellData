@@ -7,7 +7,7 @@
 xCellData()
 }
 \value{
-The gene sets as a \code{\link{unisets-package}} \code{\link{BaseSets}}.
+The gene sets as a \code{\link{unisets-package}} \code{\link{Sets}}.
 }
 \description{
 XCellData: 489 cell type gene signatures

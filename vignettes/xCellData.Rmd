@@ -33,7 +33,7 @@ BiocStyle::markdown()
 The `r Githubpkg("kevinrue/xCellData")` package provides a _R_ /
 _Bioconductor_ resource for obtaining and representing 489 cell type gene signatures from [@Aran2017].
 
-This packages uses the `r Githubpkg("kevinrue/unisets")` `BaseSets` class to represent the collection of signatures.
+This packages uses the `r Githubpkg("kevinrue/unisets")` `Sets` class to represent the collection of signatures.
 However, the data itself is distributed with the package as a GMT file, which may be parsed and imported by other packages (e.g. `r Biocpkg("GSEABase")` `GeneSetCollection`, `r Githubpkg("Kayla-Morrell/GeneSet")` `tbl_geneset`).
 
 # Data preprocessing
@@ -51,7 +51,7 @@ Briefly, the script downloads "Additional file 3: The 489 cell type gene signatu
 
 ## Loading the data
 
-We use the `xCellData()` function to parse the GMT file distributed with the package into a `r Githubpkg("kevinrue/unisets")` `BaseSets` object.
+We use the `xCellData()` function to parse the GMT file distributed with the package into a `r Githubpkg("kevinrue/unisets")` `Sets` object.
 
 ```{r}
 library(xCellData)
@@ -64,7 +64,7 @@ xsig
 
 The signatures may then be used for downstream analyses such as cell type annotation.
 
-For instance, the `BaseSets` object can be split into a list of signatures, for use in functions such as `lapply`.
+For instance, the `Sets` object can be split into a list of signatures, for use in functions such as `lapply`.
 
 ```{r}
 as.list(xsig)
