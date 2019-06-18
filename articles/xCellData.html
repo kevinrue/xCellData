@@ -67,7 +67,7 @@
       Kennedy Institute of Rheumatology, University of Oxford, Headington, Oxford OX3 7FY, UK.<br><a class="author_email" href="mailto:#"></a><a href="mailto:kevin.rue-albrecht@kennedy.ox.ac.uk">kevin.rue-albrecht@kennedy.ox.ac.uk</a>
       </address>
                   
-            <h4 class="date">12 June 2019</h4>
+            <h4 class="date">18 June 2019</h4>
       
       
       <div class="hidden name"><code>xCellData.Rmd</code></div>
@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <h1 class="hasAnchor">
 <a href="#introduction" class="anchor"></a>Introduction</h1>
 <p>The <em><a href="https://github.com/kevinrue/xCellData">xCellData</a></em> package provides a <em>R</em> / <em>Bioconductor</em> resource for obtaining and representing 489 cell type gene signatures from <span class="citation">(Aran, Hu, and Butte 2017)</span>.</p>
-<p>This packages uses the <em><a href="https://github.com/kevinrue/unisets">unisets</a></em> <code>BaseSets</code> class to represent the collection of signatures. However, the data itself is distributed with the package as a GMT file, which may be parsed and imported by other packages (e.g. <em><a href="https://bioconductor.org/packages/3.10/GSEABase">GSEABase</a></em> <code>GeneSetCollection</code>, <em><a href="https://github.com/Kayla-Morrell/GeneSet">GeneSet</a></em> <code>tbl_geneset</code>).</p>
+<p>This packages uses the <em><a href="https://github.com/kevinrue/unisets">unisets</a></em> <code>Sets</code> class to represent the collection of signatures. However, the data itself is distributed with the package as a GMT file, which may be parsed and imported by other packages (e.g. <em><a href="https://bioconductor.org/packages/3.10/GSEABase">GSEABase</a></em> <code>GeneSetCollection</code>, <em><a href="https://github.com/Kayla-Morrell/GeneSet">GeneSet</a></em> <code>tbl_geneset</code>).</p>
 </div>
 <div id="data-preprocessing" class="section level1">
 <h1 class="hasAnchor">
@@ -111,25 +111,25 @@ document.addEventListener("DOMContentLoaded", function() {
 <div id="loading-the-data" class="section level2">
 <h2 class="hasAnchor">
 <a href="#loading-the-data" class="anchor"></a>Loading the data</h2>
-<p>We use the <code><a href="../reference/xCellData.html">xCellData()</a></code> function to parse the GMT file distributed with the package into a <em><a href="https://github.com/kevinrue/unisets">unisets</a></em> <code>BaseSets</code> object.</p>
+<p>We use the <code><a href="../reference/xCellData.html">xCellData()</a></code> function to parse the GMT file distributed with the package into a <em><a href="https://github.com/kevinrue/unisets">unisets</a></em> <code>Sets</code> object.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(xCellData)</a>
 <a class="sourceLine" id="cb3-2" data-line-number="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(unisets)</a>
 <a class="sourceLine" id="cb3-3" data-line-number="3">xsig &lt;-<span class="st"> </span><span class="kw"><a href="../reference/xCellData.html">xCellData</a></span>()</a>
 <a class="sourceLine" id="cb3-4" data-line-number="4">xsig</a></code></pre></div>
-<pre><code>## BaseSets with 20803 relations between 5079 elements and 489 sets
-##       element          set
-##   &lt;character&gt;  &lt;character&gt;
-## 1        C1QA   aDC_HPCA_1
-## 2        C1QB   aDC_HPCA_1
-## 3       CCL13   aDC_HPCA_1
-## 4       CCL17   aDC_HPCA_1
-## 5       CCL19   aDC_HPCA_1
-##           ...          ...
-## 1       IL2RA Tregs_HPCA_3
-## 2       KCNA2 Tregs_HPCA_3
-## 3       LAIR2 Tregs_HPCA_3
-## 4      MCF2L2 Tregs_HPCA_3
-## 5        RGS1 Tregs_HPCA_3
+<pre><code>## Sets with 20803 relations between 5079 elements and 489 sets
+##            element          set
+##         &lt;IdVector&gt;   &lt;IdVector&gt;
+##     [1]       C1QA   aDC_HPCA_1
+##     [2]       C1QB   aDC_HPCA_1
+##     [3]      CCL13   aDC_HPCA_1
+##     [4]      CCL17   aDC_HPCA_1
+##     [5]      CCL19   aDC_HPCA_1
+##     ...        ...          ...
+## [20799]      IL2RA Tregs_HPCA_3
+## [20800]      KCNA2 Tregs_HPCA_3
+## [20801]      LAIR2 Tregs_HPCA_3
+## [20802]     MCF2L2 Tregs_HPCA_3
+## [20803]       RGS1 Tregs_HPCA_3
 ## 
 ## @elementData
 ## IdVector of length 5079 with 5079 unique identifiers
@@ -145,12 +145,12 @@ document.addEventListener("DOMContentLoaded", function() {
 <h2 class="hasAnchor">
 <a href="#using-the-data" class="anchor"></a>Using the data</h2>
 <p>The signatures may then be used for downstream analyses such as cell type annotation.</p>
-<p>For instance, the <code>BaseSets</code> object can be split into a list of signatures, for use in functions such as <code>lapply</code>.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/unisets/topics/BaseSets-methods">as.list</a></span>(xsig)</a></code></pre></div>
+<p>For instance, the <code>Sets</code> object can be split into a list of signatures, for use in functions such as <code>lapply</code>.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/unisets/topics/Sets-methods">as.list</a></span>(xsig)</a></code></pre></div>
 <pre><code>## List of length 489
 ## names(489): Adipocytes_ENCODE_1 ... pro B-cells_NOVERSHTERN_3</code></pre>
 <p>One may also inspect the number of genes in each signature.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">dat &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/unisets/topics/BaseSets-methods">setLengths</a></span>(xsig)</a>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">dat &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/unisets/topics/Sets-methods">setLengths</a></span>(xsig)</a>
 <a class="sourceLine" id="cb7-2" data-line-number="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/graphics/topics/hist">hist</a></span>(</a>
 <a class="sourceLine" id="cb7-3" data-line-number="3">    dat, <span class="dt">breaks =</span> <span class="dv">100</span>, <span class="dt">xlim=</span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">0</span>, <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/Extremes">max</a></span>(dat)),</a>
 <a class="sourceLine" id="cb7-4" data-line-number="4">    <span class="dt">main =</span> <span class="st">"Distribution of signature sizes"</span>, <span class="dt">xlab =</span> <span class="st">"Number of genes"</span></a>
@@ -187,8 +187,8 @@ document.addEventListener("DOMContentLoaded", function() {
 ## [8] methods   base     
 ## 
 ## other attached packages:
-## [1] unisets_0.99.0      S4Vectors_0.23.11   BiocGenerics_0.31.4
-## [4] xCellData_0.0.1     knitr_1.23          BiocStyle_2.13.1   
+## [1] unisets_0.99.0      S4Vectors_0.23.12   BiocGenerics_0.31.4
+## [4] xCellData_0.0.1     knitr_1.23          BiocStyle_2.13.2   
 ## 
 ## loaded via a namespace (and not attached):
 ##  [1] Rcpp_1.0.1                  lattice_0.20-38            
@@ -203,12 +203,12 @@ document.addEventListener("DOMContentLoaded", function() {
 ## [19] rmarkdown_1.13              pkgdown_1.3.0              
 ## [21] desc_1.2.0                  BiocParallel_1.19.0        
 ## [23] stringr_1.4.0               RCurl_1.95-4.12            
-## [25] bit_1.1-14                  DelayedArray_0.11.0        
+## [25] bit_1.1-14                  DelayedArray_0.11.1        
 ## [27] compiler_3.6.0              rtracklayer_1.45.1         
 ## [29] xfun_0.7                    htmltools_0.3.6            
-## [31] SummarizedExperiment_1.15.1 GenomeInfoDbData_1.2.1     
+## [31] SummarizedExperiment_1.15.3 GenomeInfoDbData_1.2.1     
 ## [33] roxygen2_6.1.1              bookdown_0.11              
-## [35] IRanges_2.19.9              matrixStats_0.54.0         
+## [35] IRanges_2.19.10             matrixStats_0.54.0         
 ## [37] XML_3.98-1.20               crayon_1.3.4               
 ## [39] GenomicAlignments_1.21.2    MASS_7.3-51.4              
 ## [41] bitops_1.0-6                commonmark_1.7             
@@ -220,7 +220,7 @@ document.addEventListener("DOMContentLoaded", function() {
 ## [53] xml2_1.2.0                  tools_3.6.0                
 ## [55] bit64_0.9-7                 Biobase_2.45.0             
 ## [57] yaml_2.2.0                  AnnotationDbi_1.47.0       
-## [59] BiocManager_1.30.4          GenomicRanges_1.37.10      
+## [59] BiocManager_1.30.4          GenomicRanges_1.37.11      
 ## [61] memoise_1.1.0</code></pre>
 </div>
 <div id="references" class="section level1 unnumbered">
