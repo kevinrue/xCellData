@@ -7,8 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Obtaining 489 cell type gene signatures from Aran et al., 2017 • xCellData</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script><meta property="og:title" content="Obtaining 489 cell type gene signatures from Aran et al., 2017">
 <meta property="og:description" content="">
 <meta name="twitter:card" content="summary">
@@ -38,7 +39,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -58,6 +59,7 @@
 <!--/.navbar -->
 
       
+
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
@@ -67,7 +69,7 @@
       Kennedy Institute of Rheumatology, University of Oxford, Headington, Oxford OX3 7FY, UK.<br><a class="author_email" href="mailto:#"></a><a href="mailto:kevin.rue-albrecht@kennedy.ox.ac.uk">kevin.rue-albrecht@kennedy.ox.ac.uk</a>
       </address>
                   
-            <h4 class="date">2 September 2019</h4>
+            <h4 class="date">9 September 2019</h4>
       
       
       <div class="hidden name"><code>xCellData.Rmd</code></div>
@@ -101,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <h1 class="hasAnchor">
 <a href="#data-preprocessing" class="anchor"></a>Data preprocessing</h1>
 <p>The script used to download and preprocess the data is distributed with the package. You can find it at the following location:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/system.file">system.file</a></span>(<span class="dt">package =</span> <span class="st">"xCellData"</span>, <span class="st">"scripts"</span>, <span class="st">"makeData.R"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="dt">package =</span> <span class="st">"xCellData"</span>, <span class="st">"scripts"</span>, <span class="st">"makeData.R"</span>)</a></code></pre></div>
 <pre><code>## [1] "/home/travis/R/Library/xCellData/scripts/makeData.R"</code></pre>
 <p>Briefly, the script downloads “Additional file 3: The 489 cell type gene signatures. (XLSX 417 kb)” from the <a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-017-1349-1#MOESM3">https://genomebiology.biomedcentral.com</a> website and reformats the content of the published Microsoft Excel file into a GMT text file.</p>
 </div>
@@ -112,8 +114,8 @@ document.addEventListener("DOMContentLoaded", function() {
 <h2 class="hasAnchor">
 <a href="#loading-the-data" class="anchor"></a>Loading the data</h2>
 <p>We use the <code><a href="../reference/xCellData.html">xCellData()</a></code> function to parse the GMT file distributed with the package into a <em><a href="https://github.com/kevinrue/unisets">unisets</a></em> <code>Sets</code> object.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(xCellData)</a>
-<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(unisets)</a>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(xCellData)</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(unisets)</a>
 <a class="sourceLine" id="cb3-3" data-line-number="3">xsig &lt;-<span class="st"> </span><span class="kw"><a href="../reference/xCellData.html">xCellData</a></span>()</a>
 <a class="sourceLine" id="cb3-4" data-line-number="4">xsig</a></code></pre></div>
 <pre><code>## Sets with 20803 relations between 5079 elements and 489 sets
@@ -139,13 +141,13 @@ document.addEventListener("DOMContentLoaded", function() {
 <a href="#using-the-data" class="anchor"></a>Using the data</h2>
 <p>The signatures may then be used for downstream analyses such as cell type annotation.</p>
 <p>For instance, the <code>Sets</code> object can be split into a list of signatures, for use in functions such as <code>lapply</code>.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/unisets/topics/Sets-methods">as.list</a></span>(xsig)</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/pkg/unisets/man/Sets-methods.html">as.list</a></span>(xsig)</a></code></pre></div>
 <pre><code>## List of length 489
 ## names(489): Adipocytes_ENCODE_1 ... pro B-cells_NOVERSHTERN_3</code></pre>
 <p>One may also inspect the number of genes in each signature.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">dat &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/unisets/topics/Sets-methods">setLengths</a></span>(xsig)</a>
-<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/graphics/topics/hist">hist</a></span>(</a>
-<a class="sourceLine" id="cb7-3" data-line-number="3">    dat, <span class="dt">breaks =</span> <span class="dv">100</span>, <span class="dt">xlim=</span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">0</span>, <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/Extremes">max</a></span>(dat)),</a>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">dat &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/pkg/unisets/man/Sets-methods.html">setLengths</a></span>(xsig)</a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span>(</a>
+<a class="sourceLine" id="cb7-3" data-line-number="3">    dat, <span class="dt">breaks =</span> <span class="dv">100</span>, <span class="dt">xlim=</span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dv">0</span>, <span class="kw"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span>(dat)),</a>
 <a class="sourceLine" id="cb7-4" data-line-number="4">    <span class="dt">main =</span> <span class="st">"Distribution of signature sizes"</span>, <span class="dt">xlab =</span> <span class="st">"Number of genes"</span></a>
 <a class="sourceLine" id="cb7-5" data-line-number="5">)</a></code></pre></div>
 <p><img src="xCellData_files/figure-html/unnamed-chunk-5-1.png" width="700"></p>
@@ -158,7 +160,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <div id="session-information" class="section level1">
 <h1 class="hasAnchor">
 <a href="#session-information" class="anchor"></a>Session information</h1>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/sessionInfo">sessionInfo</a></span>()</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span>()</a></code></pre></div>
 <pre><code>## R version 3.6.1 (2017-01-27)
 ## Platform: x86_64-pc-linux-gnu (64-bit)
 ## Running under: Ubuntu 16.04.6 LTS
@@ -194,7 +196,7 @@ document.addEventListener("DOMContentLoaded", function() {
 ## [15] pillar_1.4.2                zlibbioc_1.31.0            
 ## [17] rlang_0.4.0                 annotate_1.63.0            
 ## [19] blob_1.2.0                  Matrix_1.2-17              
-## [21] rmarkdown_1.15              pkgdown_1.3.0              
+## [21] rmarkdown_1.15              pkgdown_1.4.0              
 ## [23] desc_1.2.0                  BiocParallel_1.19.0        
 ## [25] stringr_1.4.0               RCurl_1.95-4.12            
 ## [27] bit_1.1-14                  DelayedArray_0.11.4        
@@ -202,21 +204,20 @@ document.addEventListener("DOMContentLoaded", function() {
 ## [31] xfun_0.9                    pkgconfig_2.0.2            
 ## [33] htmltools_0.3.6             SummarizedExperiment_1.15.6
 ## [35] tibble_2.1.3                GenomeInfoDbData_1.2.1     
-## [37] roxygen2_6.1.1              bookdown_0.13              
-## [39] IRanges_2.19.10             matrixStats_0.54.0         
-## [41] XML_3.98-1.20               crayon_1.3.4               
-## [43] GenomicAlignments_1.21.4    MASS_7.3-51.4              
-## [45] bitops_1.0-6                commonmark_1.7             
-## [47] grid_3.6.1                  xtable_1.8-4               
-## [49] GSEABase_1.47.0             DBI_1.0.0                  
-## [51] magrittr_1.5                graph_1.63.0               
-## [53] stringi_1.4.3               XVector_0.25.0             
-## [55] reshape2_1.4.3              fs_1.3.1                   
-## [57] xml2_1.2.2                  vctrs_0.2.0                
-## [59] tools_3.6.1                 bit64_0.9-7                
-## [61] Biobase_2.45.0              yaml_2.2.0                 
-## [63] AnnotationDbi_1.47.0        BiocManager_1.30.4         
-## [65] GenomicRanges_1.37.14       memoise_1.1.0</code></pre>
+## [37] bookdown_0.13               IRanges_2.19.10            
+## [39] matrixStats_0.54.0          XML_3.98-1.20              
+## [41] crayon_1.3.4                GenomicAlignments_1.21.4   
+## [43] MASS_7.3-51.4               bitops_1.0-6               
+## [45] grid_3.6.1                  xtable_1.8-4               
+## [47] GSEABase_1.47.0             DBI_1.0.0                  
+## [49] magrittr_1.5                graph_1.63.0               
+## [51] stringi_1.4.3               XVector_0.25.0             
+## [53] reshape2_1.4.3              fs_1.3.1                   
+## [55] vctrs_0.2.0                 tools_3.6.1                
+## [57] bit64_0.9-7                 Biobase_2.45.0             
+## [59] yaml_2.2.0                  AnnotationDbi_1.47.0       
+## [61] BiocManager_1.30.4          GenomicRanges_1.37.14      
+## [63] memoise_1.1.0</code></pre>
 </div>
 <div id="references" class="section level1 unnumbered">
 <h1 class="hasAnchor">
@@ -251,17 +252,20 @@ document.addEventListener("DOMContentLoaded", function() {
 </div>
 
 
+
       <footer><div class="copyright">
   <p>Developed by Kevin Rue-Albrecht.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.0.</p>
 </div>
+
       </footer>
 </div>
 
   
+
 
   </body>
 </html>
