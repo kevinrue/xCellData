@@ -20,8 +20,12 @@ vignette: |
 ---
 
 ```{r, echo=FALSE, results="hide", message=FALSE}
-require(knitr)
-opts_chunk$set(error=FALSE, message=FALSE, warning=FALSE)
+knitr::opts_chunk$set(
+    error = FALSE,
+    warning = FALSE,
+    message = FALSE,
+    crop = NULL
+)
 ```
 
 ```{r style, echo=FALSE, results='asis'}
