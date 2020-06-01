@@ -69,7 +69,7 @@
       Kennedy Institute of Rheumatology, University of Oxford, Headington, Oxford OX3 7FY, UK.<br><a class="author_email" href="mailto:#"></a><a href="mailto:kevin.rue-albrecht@kennedy.ox.ac.uk">kevin.rue-albrecht@kennedy.ox.ac.uk</a>
       </address>
                   
-            <h4 class="date">13 April 2020</h4>
+            <h4 class="date">1 June 2020</h4>
       
       
       <div class="hidden name"><code>xCellData.Rmd</code></div>
@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <h1 class="hasAnchor">
 <a href="#introduction" class="anchor"></a>Introduction</h1>
 <p>The <em><a href="https://github.com/kevinrue/xCellData">xCellData</a></em> package provides a <em>R</em> / <em>Bioconductor</em> resource for obtaining and representing 489 cell type gene signatures from <span class="citation">(Aran, Hu, and Butte 2017)</span>.</p>
-<p>This packages uses the <em><a href="https://github.com/kevinrue/unisets">unisets</a></em> <code>Sets</code> class to represent the collection of signatures. However, the data itself is distributed with the package as a GMT file, which may be parsed and imported by other packages (e.g. <em><a href="https://bioconductor.org/packages/3.11/GSEABase">GSEABase</a></em> <code>GeneSetCollection</code>, <em><a href="https://github.com/Kayla-Morrell/GeneSet">GeneSet</a></em> <code>tbl_geneset</code>).</p>
+<p>This packages uses the <em><a href="https://github.com/kevinrue/unisets">unisets</a></em> <code>Sets</code> class to represent the collection of signatures. However, the data itself is distributed with the package as a GMT file, which may be parsed and imported by other packages (e.g. <em><a href="https://bioconductor.org/packages/3.12/GSEABase">GSEABase</a></em> <code>GeneSetCollection</code>, <em><a href="https://github.com/Kayla-Morrell/GeneSet">GeneSet</a></em> <code>tbl_geneset</code>).</p>
 </div>
 <div id="data-preprocessing" class="section level1">
 <h1 class="hasAnchor">
@@ -161,7 +161,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <h1 class="hasAnchor">
 <a href="#session-information" class="anchor"></a>Session information</h1>
 <div class="sourceCode" id="cb8"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span>()</pre></body></html></div>
-<pre><code>## R Under development (unstable) (2020-04-13 r78211)
+<pre><code>## R Under development (unstable) (2020-05-29 r78616)
 ## Platform: x86_64-pc-linux-gnu (64-bit)
 ## Running under: Ubuntu 16.04.6 LTS
 ## 
@@ -182,40 +182,40 @@ document.addEventListener("DOMContentLoaded", function() {
 ## [8] methods   base     
 ## 
 ## other attached packages:
-## [1] unisets_0.99.0      S4Vectors_0.25.12   BiocGenerics_0.33.0
-## [4] xCellData_0.0.1     BiocStyle_2.15.6   
+## [1] unisets_0.99.0      S4Vectors_0.27.9    BiocGenerics_0.35.2
+## [4] xCellData_0.0.1     BiocStyle_2.17.0   
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] SummarizedExperiment_1.17.3 xfun_0.13                  
-##  [3] reshape2_1.4.3              lattice_0.20-41            
-##  [5] vctrs_0.2.4                 htmltools_0.4.0            
-##  [7] rtracklayer_1.47.0          yaml_2.2.1                 
+##  [1] SummarizedExperiment_1.19.4 xfun_0.14                  
+##  [3] reshape2_1.4.4              lattice_0.20-41            
+##  [5] vctrs_0.3.0                 htmltools_0.4.0            
+##  [7] rtracklayer_1.49.2          yaml_2.2.1                 
 ##  [9] blob_1.2.1                  XML_3.99-0.3               
-## [11] rlang_0.4.5                 pkgdown_1.5.1              
-## [13] DBI_1.1.0                   BiocParallel_1.21.2        
-## [15] bit64_0.9-7                 matrixStats_0.55.0         
-## [17] GenomeInfoDbData_1.2.2      plyr_1.8.6                 
-## [19] stringr_1.4.0               zlibbioc_1.33.1            
-## [21] Biostrings_2.55.5           memoise_1.1.0              
-## [23] evaluate_0.14               Biobase_2.47.2             
-## [25] knitr_1.28                  IRanges_2.21.3             
-## [27] GenomeInfoDb_1.23.13        AnnotationDbi_1.49.1       
-## [29] GSEABase_1.49.0             Rcpp_1.0.4.6               
-## [31] xtable_1.8-4                backports_1.1.6            
-## [33] BiocManager_1.30.10         DelayedArray_0.13.5        
-## [35] desc_1.2.0                  graph_1.65.1               
-## [37] annotate_1.65.1             XVector_0.27.0             
-## [39] fs_1.3.2                    bit_1.1-15.2               
-## [41] Rsamtools_2.3.5             digest_0.6.25              
-## [43] stringi_1.4.6               bookdown_0.18              
-## [45] GenomicRanges_1.39.2        rprojroot_1.3-2            
+## [11] rlang_0.4.6                 pkgdown_1.5.1              
+## [13] DBI_1.1.0                   BiocParallel_1.23.0        
+## [15] bit64_0.9-7                 matrixStats_0.56.0         
+## [17] GenomeInfoDbData_1.2.3      plyr_1.8.6                 
+## [19] stringr_1.4.0               zlibbioc_1.35.0            
+## [21] Biostrings_2.57.1           memoise_1.1.0              
+## [23] evaluate_0.14               Biobase_2.49.0             
+## [25] knitr_1.28                  IRanges_2.23.6             
+## [27] GenomeInfoDb_1.25.0         AnnotationDbi_1.51.0       
+## [29] GSEABase_1.51.1             Rcpp_1.0.4.6               
+## [31] xtable_1.8-4                backports_1.1.7            
+## [33] BiocManager_1.30.10         DelayedArray_0.15.1        
+## [35] desc_1.2.0                  graph_1.67.1               
+## [37] annotate_1.67.0             XVector_0.29.1             
+## [39] fs_1.4.1                    bit_1.1-15.2               
+## [41] Rsamtools_2.5.1             digest_0.6.25              
+## [43] stringi_1.4.6               bookdown_0.19              
+## [45] GenomicRanges_1.41.1        rprojroot_1.3-2            
 ## [47] grid_4.1.0                  tools_4.1.0                
 ## [49] bitops_1.0-6                magrittr_1.5               
-## [51] RCurl_1.98-1.1              RSQLite_2.2.0              
-## [53] crayon_1.3.4                MASS_7.3-51.5              
+## [51] RCurl_1.98-1.2              RSQLite_2.2.0              
+## [53] crayon_1.3.4                MASS_7.3-51.6              
 ## [55] Matrix_1.2-18               assertthat_0.2.1           
-## [57] rmarkdown_2.1               R6_2.4.1                   
-## [59] GenomicAlignments_1.23.1    compiler_4.1.0</code></pre>
+## [57] rmarkdown_2.2               R6_2.4.1                   
+## [59] GenomicAlignments_1.25.1    compiler_4.1.0</code></pre>
 </div>
 <div id="references" class="section level1 unnumbered">
 <h1 class="hasAnchor">
